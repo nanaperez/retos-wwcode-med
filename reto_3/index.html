@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 3 - CSS Grid</title>
+</head>
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .container{
+        display: grid;
+        width: 320px;
+        height: 320px;
+        border: 1px solid black;
+        grid-gap: 10px;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-areas:
+        "header header header"
+        "sidebar main aside"
+        "sidebar footer footer";
+    }
+
+    .element-ppal {
+        background-color: whitesmoke;
+        border: 1px solid black;
+        margin: 10px;
+    }
+
+    .element {
+        background-color: lightpink;
+        border: 1px solid black;
+        margin: 10px;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="element-ppal"></div>
+        <div class="element-ppal"></div>
+        <div class="element-ppal"></div>
+        <div class="element-ppal"></div>
+        <div class="element"></div>
+        <div class="element-ppal"></div>
+        <div class="element-ppal"></div>
+        <div class="element-ppal"></div>
+        <div class="element-ppal"></div>
+    </div>
+</body>
+
+</html>
