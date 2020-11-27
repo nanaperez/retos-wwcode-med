@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 2 - React con JSX</title>
+    <!-- Estos scripts son para que puedas usar JSX y React y transpirarlos con BABEL -->
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+    const rootElement = document.getElementById('root')
+    // Escribe tu código aquí usando solo React *** con JSX ***
+
+    //Creacion del titulo
+    const title = "Cosas que amo";
+
+    //Creacion de los elementos de la lista
+    const list = ["Amo el código", "Amo bailar", "Amo NO cocinar"];
+
+    //Mapeo de la elementos de la lista, para que se muestre elemento por elemento
+    const listItems = list.map((list) => <li>{list}</li>);
+
+    //Construccion del elemento a crear en el HTML
+    const element = (
+        <div className='container'>
+            <h1>{title}</h1>
+            <ul>{listItems}</ul>
+        </div>
+    );
+
+    ReactDOM.render(element, rootElement);
+
+</script>
+
+</html>

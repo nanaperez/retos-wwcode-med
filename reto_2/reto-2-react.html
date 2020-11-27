@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 2 - solo React</title>
+    <!-- Estos scripts son para que puedas usar JSX y React y transpirarlos con BABEL -->
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+    const rootElement = document.getElementById('root')
+    // Escribe tu código aquí usando solo React *** sin JSX ***
+
+    //Creacion del titulo
+    const title = <h1>Cosas que amo</h1>;
+
+    //Creacion de los elementos de la lista
+    const lists = ['Amo el código', 'Amo bailar', 'Amo NO cocinar'];
+
+    //Creacion de la lista
+    const listItem = lists.map((list, idx) => {
+        return <ul><li key={idx}>{list}</li></ul>;
+    });
+
+    //Creacion del elemento 
+    const element = React.createElement(
+        'div',
+        { className: 'container' },
+        title,
+        listItem
+    )
+
+    ReactDOM.render(element, rootElement)
+
+</script>
+
+</html>
